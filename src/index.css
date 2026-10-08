@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-urdu: 'Noto Sans Arabic', system-ui, sans-serif;
+
+    --color-primary-navy: #0B1720;
+    --color-secondary-navy: #102733;
+    --color-teal-accent: #087E8B;
+    --color-teal-light: #35A7A5;
+    --color-soft-blue: #DDEFF2;
+    --color-medical-bg: #F5FAFA;
+    --color-warm-white: #FCFCFA;
+    --color-main-text: #17212B;
+    --color-muted-text: #65727A;
+    --border-subtle: rgba(11, 23, 32, 0.12);
+    --border-strong: rgba(11, 23, 32, 0.20);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    color: var(--color-main-text);
+    background-color: var(--color-warm-white);
+  }
+
+  h1, h2, h3, .font-editorial {
+    font-family: var(--font-serif);
+    letter-spacing: -0.015em;
+  }
+
+  .font-urdu {
+    font-family: var(--font-urdu);
+  }
+}
+
+/* Subtle medical grid background */
+.bg-medical-grid {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(11, 23, 32, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11, 23, 32, 0.04) 1px, transparent 1px);
+}
+
+.bg-medical-grid-dark {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Smooth motion handling */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
